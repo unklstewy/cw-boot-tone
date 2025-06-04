@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"go-morse-code-app/src/morse"
+	"go-morse-code-app/morse"
 
 	"github.com/faiface/beep"
 	"github.com/faiface/beep/speaker"
