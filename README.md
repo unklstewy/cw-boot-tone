@@ -16,10 +16,25 @@ A command-line tool for converting text to Morse code (CW) and playing it back a
     └── ogd77cwgen.go
 ```
 
+## Ouput Exmaple
+```
+USER@HOST:~/cw-boot-tone/src$ go run ogd77cwgen.go 
+Enter text to convert to Morse code: CQ CQ DE W3MSG
+
+Morse Code: 38,6,0,2,38,2,0,2,38,6,0,2,38,2,0,2,0,2,38,6,0,2,38,6,0,2,38,2,0,2,38,6,0,2,0,2,0,2,0,2,38,6,0,2,38,2,0,2,38,6,0,2,38,2,0,2,0,2,38,6,0,2,38,6,0,2,38,2,0,2,38,6,0,2,0,2,0,2,0,2,38,6,0,2,38,2,0,2,38,2,0,2,0,2,38,2,0,2,0,2,0,2,0,2,38,2,0,2,38,6,0,2,38,6,0,2,0,2,38,2,0,2,38,2,0,2,38,2,0,2,38,6,0,2,38,6,0,2,0,2,38,6,0,2,38,6,0,2,0,2,38,2,0,2,38,2,0,2,38,2,0,2,0,2,38,6,0,2,38,6,0,2,38,2
+
+Would you like to hear the Morse code? (y/n): Y
+
+```
+- To use the string in OpenGD77 CPS simply copy the ouput string after Morse Code: and paste it into the "Boot Melody" text box found under 'Extras -> OpenGD77 Support" and then click the 'Write Code Plug' button.
+
+Example:
+![Screenshot](example-01.png)
+
 ## Features
 
-- Converts input text to Morse code using ITU standard timing.
-- Plays Morse code as an audio tone using a sine wave (FM synth) through your sound card.
+- Converts input text to Morse Code represented as tone strings for the OpenGD77 Boot Tone Feature.
+- Plays Morse code as an audio tone using a sine wave (FM synth) through your sound card to verify the generated tones.
 - Lets you select code speed (WPM) and tone (note) via optional command-line flags.
 - Defaults to 25 WPM and note 38 (A# 932.3 Hz) if no flags are provided.
 
@@ -98,6 +113,10 @@ From the `src` directory:
 # Build for Linux x86_64
 GOOS=linux GOARCH=amd64 go build -o ogd77cwgen ogd77cwgen.go
 ```
+```sh
+# Build for Linux xARM64
+GOOS=linux GOARCH=arm64 go build -o ogd77cwgen ogd77cwgen.go
+```
 
 You can then copy `ogd77cwgen` to `/usr/local/bin` or any directory in your `$PATH`.
 
@@ -119,6 +138,10 @@ sudo cp ogd77cwgen /usr/local/bin/
 # Build for Windows x86_64
 GOOS=windows GOARCH=amd64 go build -o ogd77cwgen.exe ogd77cwgen.go
 ```
+```sh
+# Build for Windows ARM64
+GOOS=windows GOARCH=arm64 go build -o ogd77cwgen.exe ogd77cwgen.go
+```
 
 You can then run `ogd77cwgen.exe` on any Windows 64-bit system.
 
@@ -129,12 +152,20 @@ You can then run `ogd77cwgen.exe` on any Windows 64-bit system.
 GOOS=darwin GOARCH=amd64 go build -o ogd77cwgen ogd77cwgen.go
 ```
 
+```sh
+# Build for MacOS x86_64
+GOOS=darwin GOARCH=amd64 go build -o ogd77cwgen ogd77cwgen.go
+```
+```sh
+# Build for MacOS Apple Silicon (M1,M2,M3,M4...) ARM64
+GOOS=darwin GOARCH=arm64 go build -o ogd77cwgen ogd77cwgen.go
+```
+
 You can then run `ogd77cwgen` on any Intel-based Mac.
 
 ---
 
-**Note:**  
-- For Apple Silicon (M1/M2), use `GOARCH=arm64`.
+**Notes:**  
 - You need Go installed on your system for building.  
 - The resulting binary is standalone and does not require Go to be installed on the target system.
 
@@ -146,4 +177,4 @@ MIT
 
 ---
 
-**73!**
+**73! dE W3MSG - Casey A.**
