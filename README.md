@@ -29,7 +29,7 @@ Would you like to hear the Morse code? (y/n): Y
 - To use the string in OpenGD77 CPS simply copy the ouput string after Morse Code: and paste it into the "Boot Melody" text box found under 'Extras -> OpenGD77 Support" and then click the 'Write Code Plug' button.
 
 Example:
-![Screenshot](example-01.png)
+![Example:](example-01.png)
 
 ## Features
 
